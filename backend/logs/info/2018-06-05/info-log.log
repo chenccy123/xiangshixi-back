@@ -1,0 +1,260 @@
+2018-06-05 10:20:23.913 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 10:20:26.062 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 10:25:20.256 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 10:25:22.147 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 10:27:47.238 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 10:27:49.180 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 10:33:26.860 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 10:33:28.821 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 10:47:56.238 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 10:47:58.202 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 10:48:51.864 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 10:48:53.752 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 11:36:36.514 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 11:36:38.709 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 11:38:30.698 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 11:38:32.644 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 11:39:38.699 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 11:39:40.649 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 11:42:56.608 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 11:42:58.509 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 13:07:37.407 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 13:10:14.458 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 13:14:14.726 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 13:16:11.518 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 13:18:58.611 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 13:20:56.265 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 13:22:25.327 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 13:22:40.176 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 13:35:12.809 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 13:37:02.927 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 15:23:24.250 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 15:23:26.286 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 15:24:39.149 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 15:24:41.096 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 15:30:19.991 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 15:30:21.965 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 15:36:50.777 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 15:36:52.792 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 15:38:22.310 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 15:38:24.296 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 15:41:40.043 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 15:41:41.939 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 16:16:20.018 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:16:21.962 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 16:21:17.376 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:23:51.749 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:23:53.896 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 16:45:16.924 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:45:18.817 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 16:45:54.683 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:45:56.590 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 16:46:24.077 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:46:26.213 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 16:46:41.111 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:46:43.069 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 16:47:33.185 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:47:35.147 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 16:47:48.082 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:47:50.000 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 16:48:06.596 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:48:08.509 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 16:49:48.529 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 16:49:50.430 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 17:18:00.338 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 17:18:09.705 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Start Generate Salaries ********************************
+2018-06-05 17:18:09.705 INFO  thu.declan.xi.server.task.SalaryTask - For working resumes
+2018-06-05 17:18:10.077 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 17:35:01.037 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 17:35:04.046 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 17:36:27.901 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 17:36:30.545 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 17:41:40.679 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 17:41:43.910 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 17:43:44.947 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 17:43:51.701 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Start Generate Salaries ********************************
+2018-06-05 17:43:51.702 INFO  thu.declan.xi.server.task.SalaryTask - For working resumes
+2018-06-05 17:43:52.102 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 17:43:52.185 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 17:43:52.192 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 17:43:52.206 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 17:43:52.212 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 17:43:52.221 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 17:43:52.235 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 17:43:52.243 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 17:43:52.247 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 17:43:52.250 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 184
+2018-06-05 17:43:52.253 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 180
+2018-06-05 17:43:52.258 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 178
+2018-06-05 17:43:52.263 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 177
+2018-06-05 17:43:52.266 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 174
+2018-06-05 17:43:52.269 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 173
+2018-06-05 17:43:52.273 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 170
+2018-06-05 17:43:52.279 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 166
+2018-06-05 17:43:52.282 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 157
+2018-06-05 17:43:52.284 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 155
+2018-06-05 17:43:52.286 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 106
+2018-06-05 17:43:52.289 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 88
+2018-06-05 17:43:52.291 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 82
+2018-06-05 17:43:52.293 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 80
+2018-06-05 17:43:52.306 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 79
+2018-06-05 17:43:52.308 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 77
+2018-06-05 17:43:52.310 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 76
+2018-06-05 17:43:52.314 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 71
+2018-06-05 17:43:52.316 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 70
+2018-06-05 17:43:52.318 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 68
+2018-06-05 17:43:52.320 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 67
+2018-06-05 17:43:52.323 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 64
+2018-06-05 17:43:52.325 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 58
+2018-06-05 17:43:52.327 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 57
+2018-06-05 17:43:52.329 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 56
+2018-06-05 17:43:52.331 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 55
+2018-06-05 17:43:52.332 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 54
+2018-06-05 17:43:52.334 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 53
+2018-06-05 17:43:52.337 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 52
+2018-06-05 17:43:52.339 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 51
+2018-06-05 17:43:52.342 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 50
+2018-06-05 17:43:52.343 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 48
+2018-06-05 17:43:52.345 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 47
+2018-06-05 17:43:52.347 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 44
+2018-06-05 17:43:52.349 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 43
+2018-06-05 17:43:52.350 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 40
+2018-06-05 17:43:52.352 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 30
+2018-06-05 17:43:52.355 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 14
+2018-06-05 17:43:52.357 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 9
+2018-06-05 17:43:52.359 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 7
+2018-06-05 17:43:52.360 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Finish Generate Salaries ********************************
+2018-06-05 17:43:52.430 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 17:48:59.146 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 17:49:01.844 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 17:52:12.562 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 17:52:15.212 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 17:56:50.365 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 17:56:52.759 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Start Auto Confirm Salaries ********************************
+2018-06-05 17:56:52.943 INFO  thu.declan.xi.server.task.SalaryTask - Auto confirm for salary 59
+2018-06-05 17:56:53.054 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Finish Auto Confirm Salaries ********************************
+2018-06-05 17:56:53.107 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 21:09:37.629 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 21:09:41.498 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Start Auto Confirm Salaries ********************************
+2018-06-05 21:09:41.858 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Finish Auto Confirm Salaries ********************************
+2018-06-05 21:09:41.921 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 21:10:09.142 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 21:10:12.050 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Start Auto Confirm Salaries ********************************
+2018-06-05 21:10:12.159 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Finish Auto Confirm Salaries ********************************
+2018-06-05 21:10:12.175 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 21:10:27.256 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 21:10:29.790 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Start Auto Confirm Salaries ********************************
+2018-06-05 21:10:29.898 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Finish Auto Confirm Salaries ********************************
+2018-06-05 21:10:29.911 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 21:19:01.943 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 21:19:04.540 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Start Generate Salaries ********************************
+2018-06-05 21:19:04.540 INFO  thu.declan.xi.server.task.SalaryTask - For working resumes
+2018-06-05 21:19:04.983 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:19:04.992 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:19:04.995 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:19:04.997 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:19:05.000 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:19:05.002 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:19:05.004 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:19:05.007 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:19:05.009 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:19:05.012 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 184
+2018-06-05 21:19:05.015 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 180
+2018-06-05 21:19:05.017 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 178
+2018-06-05 21:19:05.020 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 177
+2018-06-05 21:19:05.022 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 174
+2018-06-05 21:19:05.024 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 173
+2018-06-05 21:19:05.027 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 170
+2018-06-05 21:19:05.031 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 166
+2018-06-05 21:19:05.033 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 157
+2018-06-05 21:19:05.035 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 155
+2018-06-05 21:19:05.037 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 106
+2018-06-05 21:19:05.040 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 88
+2018-06-05 21:19:05.042 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 82
+2018-06-05 21:19:05.044 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 80
+2018-06-05 21:19:05.046 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 79
+2018-06-05 21:19:05.048 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 77
+2018-06-05 21:19:05.050 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 76
+2018-06-05 21:19:05.052 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 71
+2018-06-05 21:19:05.057 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 70
+2018-06-05 21:19:05.059 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 68
+2018-06-05 21:19:05.060 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 67
+2018-06-05 21:19:05.062 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 64
+2018-06-05 21:19:05.064 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 58
+2018-06-05 21:19:05.066 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 57
+2018-06-05 21:19:05.068 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 56
+2018-06-05 21:19:05.071 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 55
+2018-06-05 21:19:05.073 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 54
+2018-06-05 21:19:05.074 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 53
+2018-06-05 21:19:05.077 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 52
+2018-06-05 21:19:05.078 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 51
+2018-06-05 21:19:05.080 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 50
+2018-06-05 21:19:05.082 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 48
+2018-06-05 21:19:05.084 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 47
+2018-06-05 21:19:05.086 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 44
+2018-06-05 21:19:05.088 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 43
+2018-06-05 21:19:05.092 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 40
+2018-06-05 21:19:05.094 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 30
+2018-06-05 21:19:05.096 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 14
+2018-06-05 21:19:05.099 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 9
+2018-06-05 21:19:05.100 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 7
+2018-06-05 21:19:05.103 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Finish Generate Salaries ********************************
+2018-06-05 21:19:05.162 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Start Auto Confirm Salaries ********************************
+2018-06-05 21:19:05.172 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Finish Auto Confirm Salaries ********************************
+2018-06-05 21:19:05.205 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-06-05 21:27:11.890 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-06-05 21:27:15.149 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Start Generate Salaries ********************************
+2018-06-05 21:27:15.150 INFO  thu.declan.xi.server.task.SalaryTask - For working resumes
+2018-06-05 21:27:15.439 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:27:15.446 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:27:15.448 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:27:15.450 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:27:15.452 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:27:15.454 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:27:15.456 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:27:15.459 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:27:15.461 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 186
+2018-06-05 21:27:15.463 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 184
+2018-06-05 21:27:15.465 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 180
+2018-06-05 21:27:15.467 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 178
+2018-06-05 21:27:15.469 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 177
+2018-06-05 21:27:15.472 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 174
+2018-06-05 21:27:15.474 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 173
+2018-06-05 21:27:15.476 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 170
+2018-06-05 21:27:15.480 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 166
+2018-06-05 21:27:15.482 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 157
+2018-06-05 21:27:15.483 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 155
+2018-06-05 21:27:15.486 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 106
+2018-06-05 21:27:15.488 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 88
+2018-06-05 21:27:15.491 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 82
+2018-06-05 21:27:15.492 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 80
+2018-06-05 21:27:15.496 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 79
+2018-06-05 21:27:15.499 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 77
+2018-06-05 21:27:15.500 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 76
+2018-06-05 21:27:15.503 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 71
+2018-06-05 21:27:15.509 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 70
+2018-06-05 21:27:15.510 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 68
+2018-06-05 21:27:15.512 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 67
+2018-06-05 21:27:15.514 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 64
+2018-06-05 21:27:15.516 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 58
+2018-06-05 21:27:15.519 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 57
+2018-06-05 21:27:15.521 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 56
+2018-06-05 21:27:15.523 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 55
+2018-06-05 21:27:15.525 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 54
+2018-06-05 21:27:15.527 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 53
+2018-06-05 21:27:15.529 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 52
+2018-06-05 21:27:15.531 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 51
+2018-06-05 21:27:15.533 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 50
+2018-06-05 21:27:15.535 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 48
+2018-06-05 21:27:15.537 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 47
+2018-06-05 21:27:15.539 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 44
+2018-06-05 21:27:15.541 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 43
+2018-06-05 21:27:15.543 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 40
+2018-06-05 21:27:15.544 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 30
+2018-06-05 21:27:15.546 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 14
+2018-06-05 21:27:15.549 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 9
+2018-06-05 21:27:15.551 INFO  thu.declan.xi.server.task.SalaryTask - Generate for resume 7
+2018-06-05 21:27:15.553 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Finish Generate Salaries ********************************
+2018-06-05 21:27:15.705 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Start Auto Confirm Salaries ********************************
+2018-06-05 21:27:15.725 INFO  thu.declan.xi.server.task.SalaryTask - ******************************** Finish Auto Confirm Salaries ********************************
+2018-06-05 21:27:15.747 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

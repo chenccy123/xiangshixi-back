@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="thu.declan.xi.server.mapper.InvoiceMapper">
+
+    <resultMap type="Invoice" id="invoiceResult">
+        <result property="id" column="i_id" />
+        <result property="auditId" column="i_auditId" />
+		<result property="comId" column="i_comId" />
+		<result property="actId" column="i_actId" />
+		<result property="payId" column="i_payId" />
+		<result property="invTitle" column="i_invTitle" />
+		<result property="comEin" column="i_comEin" />
+		<result property="money" column="i_money" />
+		<result property="comEmail" column="i_comEmail" />
+        <result property="invType" column="i_invType" />
+        <result property="applyState" column="i_applyState" />
+        <result property="applyDate" column="i_applyDate" />
+        <result property="auditDate" column="i_auditDate" />
+        <association property="company" javaType="Company">
+        	<result property="id" column="c_id" />
+        	<result property="billId" column="c_billId" />
+        	<result property="name" column="c_name" />
+        	<result property="addr" column="c_addr" />
+        	<result property="type" column="c_type" />
+        	<association  property="bill" javaType="Bill">
+        		<result property="id" column="b_id" />
+				<result property="invTitle" column="b_invTitle" />
+				<result property="comEin" column="b_comEin" />
+				<result property="comEmail" column="b_comEmail" />
+        	</association>
+        </association>
+        <association property="payroll" javaType="Payroll">
+        	<result property="id" column="p_id" />
+        	<result property="comId" column="p_comId" />
+        	<result property="comName" column="p_comName" />
+        	<result property="month" column="p_month" />
+        	<result property="total" column="p_total" />
+        	<result property="number" column="p_number" />
+        </association>
+    </resultMap>
+	
+    <sql id="insertBaseColumns" >
+        i_auditId, i_comId, i_actId, i_payId, i_invTitle, i_comEin, i_money, i_comEmail, i_invType, i_applyState, i_applyDate, i_auditDate
+    </sql>
+    
+    <sql id="selectBaseColumns" >
+		xi_invoice.*
+    </sql>
+    
+	<sql id="selectExtColumns" >
+		xi_invoice.*, xi_payroll.*, xi_company.*, xi_bill.*
+    </sql>
+    
+    <sql id="joinedTable">
+		xi_invoice
+		left join xi_payroll on xi_payroll.p_invid = xi_invoice.i_id
+		left join xi_company on xi_company.c_id = xi_invoice.i_comid
+		left join xi_bill on xi_company.c_billid = xi_bill.b_id
+	</sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="Invoice">
+        insert into xi_invoice (<include refid="insertBaseColumns" />) 
+        values (#{auditId}, #{comId}, #{actId}, #{payId}, #{invTitle}, #{comEin}, #{money}, #{comEmail}, #{invType}, #{applyState}, #{applyDate}, #{auditDate})
+    </insert>
+    
+    <update id="update" parameterType="Invoice">
+        update xi_invoice 
+        <trim prefix="set" suffixOverrides=",">
+        	<if test="auditId != null">  i_auditId = #{auditId}, </if>
+        	<if test="comId != null">  i_comId = #{comId}, </if>
+        	<if test="actId != null">  i_actId = #{actId}, </if>
+			<if test="payId != null"> i_payId = #{payId}, </if>
+            <if test="invTitle != null"> i_invTitle = #{invTitle}, </if>
+            <if test="comEin != null"> i_comEin = #{comEin}, </if>
+            <if test="money != null"> i_money = #{money}, </if>
+            <if test="comEmail != null"> i_comEmail = #{comEmail}, </if>
+            <if test="invType != null"> i_invType = #{invType}, </if>
+            <if test="applyState != null"> i_applyState = #{applyState}, </if>
+            <if test="applyDate != null"> i_applyDate = #{applyDate}, </if>
+            <if test="auditDate != null"> i_auditDate = #{auditDate}, </if>
+        </trim>
+        where i_id = #{id}
+    </update>
+    
+    <select id="selectOne" parameterType="int" resultMap="invoiceResult">
+        select <include refid="selectBaseColumns" />
+        from xi_invoice
+        where i_id = #{id}
+    </select>
+	
+	<sql id="whereList" >
+		<trim prefix="where" suffixOverrides="and">
+			<if test="auditId != null">  i_auditId = #{auditId} and </if>
+        	<if test="comId != null">  i_comId = #{comId} and </if>
+        	<if test="actId != null">  i_actId = #{actId} and </if>
+			<if test="payId != null"> i_payId = #{payId} and </if>
+            <if test="invTitle != null"> i_invTitle = #{invTitle} and </if>
+            <if test="comEin != null"> i_comEin = #{comEin} and </if>
+            <if test="money != null"> i_money = #{money} and </if>
+            <if test="comEmail != null"> i_comEmail = #{comEmail} and </if>
+            <if test="invType != null"> i_invType = #{invType} and </if>
+            <if test="applyState != null"> i_applyState = #{applyState} and </if>
+            <if test="applyDate != null"> i_applyDate = #{applyDate} and </if>
+            <if test="auditDate != null"> i_auditDate = #{auditDate} and </if>
+			<if test="queryStates != null"> 
+				i_applyState in 
+				<foreach item="item" index="index" collection="queryStates" open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				and 
+			</if>
+        </trim>
+	</sql>
+    	
+    <select id="selectList" parameterType="Invoice" resultMap="invoiceResult">
+        select <include refid="selectExtColumns" />
+        from <include refid="joinedTable" />
+        <include refid="whereList" />
+		order by i_applyState
+    </select>
+    
+    <select id="selectCount" parameterType="Invoice" resultType="int">
+        select count(*)
+        from <include refid="joinedTable" />
+        <include refid="whereList" />
+    </select>
+	
+    <delete id="delete" parameterType="int">
+        delete from xi_invoice where i_id = #{id}
+    </delete>
+    
+</mapper>
+

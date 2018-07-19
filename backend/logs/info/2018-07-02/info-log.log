@@ -1,0 +1,2 @@
+2018-07-02 16:38:14.891 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-07-02 16:38:17.004 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
