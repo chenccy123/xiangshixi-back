@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="thu.declan.xi.server.mapper.PayrollMapper">
+
+    <resultMap type="Payroll" id="payrollResult">
+        <result property="id" column="p_id" />
+        <result property="invId" column="p_invId" />
+		<result property="comId" column="p_comId" />
+		<result property="comName" column="p_comName" />
+		<result property="month" column="p_month" />
+		<result property="total" column="p_total" />
+		<result property="number" column="p_number" />
+		<result property="payState" column="p_payState" />
+		<result property="applyState" column="p_applyState" />
+		<result property="generateDate" column="p_generateDate" />
+        <collection property="salaryTransits" ofType="SalaryTransit">
+        	<result property="id" column="i_id" />
+	        <result property="comId" column="i_comId" />
+			<result property="stuId" column="i_stuId" />
+			<result property="phone" column="i_phone" />
+			<result property="workDays" column="i_workDays" />
+			<result property="dailyWage" column="i_dailyWage" />
+			<result property="month" column="i_month" />
+	        <result property="subTotal" column="i_subTotal" />
+	        <result property="state" column="i_state" />
+	        <result property="prompt" column="i_prompt" />
+	        <result property="importDate" column="i_importDate" />
+	        <result property="submitDate" column="i_submitDate" />
+	        <association property="company" javaType="Company">
+				<id property="id" column="p_companyId"/>
+				<result property="accountId" column="c_accountId" />
+				<result property="name" column="c_name" />
+				<result property="addr" column="c_addr" />
+				<result property="type" column="c_type" />
+				<result property="contact" column="c_contact" />
+				<result property="contactPos" column="c_contactPos" />
+				<result property="contactPhone" column="c_contactPhone" />
+				<result property="avatar" column="c_avatar" />
+				<result property="phone" column="c_phone" />
+				<result property="industry" column="c_industry" />
+				<result property="link" column="c_link" />
+				<result property="logo" column="c_logo" />
+				<result property="verified" column="c_verified" />
+			</association>
+			<association property="student" javaType="Student">
+				<result property="id" column="s_id" />
+				<result property="accountId" column="s_accountId" />
+				<result property="name" column="s_name" />
+				<result property="idNo" column="s_idNo" />
+				<result property="phone" column="s_phone" />
+				<result property="gender" column="s_gender" />
+				<result property="education" column="s_education" />
+				<result property="major" column="s_major" />
+				<result property="area" column="s_area" />
+				<result property="email" column="s_email" />
+				<result property="schoolType" column="s_schoolType" />
+				<result property="schoolName" column="s_schoolName" />
+				<result property="language" column="s_language" />
+				<result property="langLevel" column="s_langLevel" />
+				<result property="grade" column="s_grade" />
+				<result property="stuCard" column="s_stuCard" />
+				<result property="certs" column="s_certs" />
+				<result property="localResume" column="s_localResume"/>
+				<result property="selfEval" column="s_selfEval" />
+				<result property="socialExp" column="s_socialExp" />
+				<result property="workExp" column="s_workExp" />
+				<result property="avatar" column="s_avatar" />
+				<result property="subscription" column="s_subscription" />
+			</association>
+        </collection>
+    </resultMap>
+	
+    <sql id="insertBaseColumns" >
+        p_invId, p_comId, p_comName, p_month, p_total, p_number, p_payState, p_applyState, p_generateDate
+    </sql>
+    
+    <sql id="selectBaseColumns" >
+		xi_payroll.*
+    </sql>
+    
+	<sql id="selectExtColumns" >
+		xi_payroll.*, xi_import.*, xi_company.*
+    </sql>
+    
+    <sql id="joinedTable">
+		xi_payroll
+		left join xi_import on xi_import.i_payId = xi_payroll.p_id
+		left join xi_company on xi_company.c_id = xi_payroll.p_comId
+	</sql>
+	
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="Payroll">
+        insert into xi_payroll (<include refid="insertBaseColumns" />) 
+        values (#{invId}, #{comId}, #{comName}, #{month}, #{total}, #{number}, #{payState}, #{applyState}, #{generateDate})
+    </insert>
+    
+    <update id="update" parameterType="Payroll">
+        update xi_payroll 
+        <trim prefix="set" suffixOverrides=",">
+        	<if test="invId != null">  p_invId = #{invId}, </if>
+        	<if test="comId != null">  p_comId = #{comId}, </if>
+        	<if test="comName != null">  p_comName = #{comName}, </if>
+			<if test="month != null"> p_month = #{month}, </if>
+            <if test="total != null"> p_total = #{total}, </if>
+            <if test="number != null"> p_number = #{number}, </if>
+            <if test="payState != null"> p_payState = #{payState}, </if>
+            <if test="applyState != null"> p_applyState = #{applyState}, </if>
+            <if test="generateDate != null"> p_generateDate = #{generateDate}, </if>
+        </trim>
+        where p_id = #{id}
+    </update>
+    
+    <select id="selectOne" parameterType="int" resultMap="payrollResult">
+        select <include refid="selectBaseColumns" />
+        from xi_payroll
+        where p_id = #{id}
+    </select>
+	
+	<sql id="whereList" >
+		<trim prefix="where" suffixOverrides="and">
+			<if test="invId != null">  p_invId = #{invId} and </if>
+        	<if test="comId != null">  p_comId = #{comId} and </if>
+        	<if test="comName != null">  p_comName = #{comName} and </if>
+			<if test="month != null"> p_month = #{month} and </if>
+            <if test="total != null"> p_total = #{total} and </if>
+            <if test="number != null"> p_number = #{number} and </if>
+            <if test="payState != null"> p_payState = #{payState} and </if>
+            <if test="applyState != null"> p_applyState = #{applyState} and </if>
+            <if test="generateDate != null"> p_generateDate = #{generateDate} and </if>
+			<if test="queryStates != null"> 
+				p_payState in 
+				<foreach item="item" index="index" collection="queryStates" open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				and 
+			</if>
+        </trim>
+	</sql>
+    	
+    <select id="selectList" parameterType="Payroll" resultMap="payrollResult">
+        select <include refid="selectExtColumns" />
+        from <include refid="joinedTable" />
+        <include refid="whereList" />
+		order by p_payState
+    </select>
+    
+    <select id="selectCount" parameterType="Payroll" resultType="int">
+        select count(*)
+        from <include refid="joinedTable" />
+        <include refid="whereList" />
+    </select>
+	
+    <delete id="delete" parameterType="int">
+        delete from xi_payroll where p_id = #{id}
+    </delete>
+    
+</mapper>
+

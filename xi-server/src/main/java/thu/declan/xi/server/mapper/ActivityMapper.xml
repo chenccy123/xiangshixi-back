@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="thu.declan.xi.server.mapper.ActivityMapper">
+    <resultMap type="Activity" id="activityResult">
+        <result property="id" column="a_Id" />
+		<result property="title" column="a_title" />
+        <result property="content" column="a_content" />
+        <result property="createTime" column="a_createTime" />
+		<result property="activityTime" column="a_activityTime" />
+		<result property="activityAddress" column="a_activityAddress" />
+        <result property="createUserId" column="a_createUserId" />
+        <result property="beginTime" column="a_beginTime" />
+        <result property="endTime" column="a_endTime" />
+        <result property="published" column="a_published" />
+        <result property="allowTarget" column="a_allowTarget" />
+        <result property="isCharge" column="a_isCharge" />
+        <result property="chargeFee" column="a_chargeFee" />
+        <result property="imgUrl" column="a_imgUrl" />
+        <result property="applyTarget" column="a_applyTarget" />
+        <association property="activityApply" javaType="ActivityApply">
+            <result property="id" column="a_Id" />
+			<result property="accountId" column="a_accountId" />
+	        <result property="activityId" column="a_activityId" />
+	        <result property="allowType" column="a_allowType" />
+			<result property="applyTime" column="a_applyTime" />
+			<result property="applyStatus" column="a_applyStatus" />
+	        <result property="payType" column="a_payType" />
+	        <result property="payFee" column="a_payFee" />
+	        <result property="payTime" column="a_payTime" />
+	        <result property="payStatus" column="a_payStatus" />
+	        <result property="checkStatus" column="a_checkStatus" />
+	        <result property="checkTime" column="a_checkTime" />
+	        <result property="checkUserId" column="a_checkUserId" />
+        </association>
+    </resultMap>
+    	
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="Activity">
+        insert into xi_activity (a_title, a_content, a_createTime, a_activityTime, a_activityAddress, a_createUserId, a_beginTime, a_endTime, a_published, a_allowTarget, a_isCharge, a_chargeFee, a_imgUrl ,a_applyTarget) 
+        values (#{title}, #{content}, NOW(), #{activityTime}, #{activityAddress}, #{createUserId}, #{beginTime}, #{endTime}, #{published}, #{allowTarget}, #{isCharge}, #{chargeFee},  #{imgUrl}, #{applyTarget})
+    </insert>
+    
+    <update id="update" parameterType="Activity">
+        update xi_activity 
+        <trim prefix="set" suffixOverrides=",">
+            <if test="title != null"> a_title = #{title}, </if>
+            <if test="content != null"> a_content = #{content}, </if>
+			<if test="createTime != null"> a_createTime = #{createTime}, </if>
+			<if test="activityTime != null"> a_activityTime = #{activityTime}, </if>
+			<if test="activityAddress != null"> a_activityAddress = #{activityAddress}, </if>
+			<if test="createUserId != null"> a_createUserId = #{createUserId}, </if>
+			<if test="beginTime != null"> a_beginTime = #{beginTime}, </if>
+			<if test="endTime != null"> a_endTime = #{endTime}, </if>
+			<if test="published != null"> a_published = #{published}, </if>
+			<if test="allowTarget != null"> a_allowTarget = #{allowTarget}, </if>
+			<if test="isCharge != null"> a_isCharge = #{isCharge}, </if>
+			<if test="chargeFee != null"> a_chargeFee = #{chargeFee}, </if>
+			<if test="imgUrl != null"> a_imgUrl = #{imgUrl}, </if>
+			<if test="applyTarget != null"> a_applyTarget = #{applyTarget}, </if>
+        </trim>
+        where a_Id = #{id}
+    </update>
+
+
+     <select id="selectListForCompany" parameterType="Activity" resultMap="activityResult">
+        select *
+        from xi_activity left join xi_activityApply on xi_activity.a_Id = xi_activityApply.a_activityId and xi_activityApply.a_accountId = #{accountID}
+        <trim prefix="where" suffixOverrides="and">
+            <if test="title != null"> a_title = #{title} and </if>
+			<if test="beginTime != null"> a_beginTime = #{beginTime} and </if>
+			<if test="endTime != null"> a_endTime = #{endTime} and </if>
+            <if test="published != null"> a_published = #{published} and </if>
+            <if test="allowTarget != null">
+                <foreach item="item" index="index" collection="allowTarget" open="(" separator=" or " close=")">
+                  a_allowTarget LIKE concat('%', #{item}, '%')
+                </foreach>
+                and 
+            </if>
+  			<if test="isCharge != null"> a_isCharge = #{isCharge} and </if>
+   			<if test="queryParams.searchKey != null">
+				(a_title LIKE concat('%', #{queryParams.searchKey}, '%')) and
+			</if>
+        </trim>
+    </select>
+     
+     <select id="selectList" parameterType="Activity" resultMap="activityResult">
+        select *
+        from xi_activity
+        <trim prefix="where" suffixOverrides="and">
+            <if test="title != null"> a_title = #{title} and </if>
+			<if test="beginTime != null"> a_beginTime = #{beginTime} and </if>
+			<if test="endTime != null"> a_endTime = #{endTime} and </if>
+            <if test="published != null"> a_published = #{published} and </if>
+            <if test="allowTarget != null">
+                <foreach item="item" index="index" collection="allowTarget" open="(" separator=" or " close=")">
+                  a_allowTarget LIKE concat('%', #{item}, '%')
+                </foreach>
+                and 
+            </if>
+  			<if test="isCharge != null"> a_isCharge = #{isCharge} and </if>
+   			<if test="queryParams.searchKey != null">
+				(a_title LIKE concat('%', #{queryParams.searchKey}, '%')) and
+			</if>
+        </trim>
+    </select>
+    
+    <select id="selectCount" parameterType="Activity" resultType="int">
+        select count(*)
+        from xi_activity
+        <trim prefix="where" suffixOverrides="and">
+            <if test="title != null"> a_title = #{title} and </if>
+			<if test="beginTime != null"> a_beginTime = #{beginTime} and </if>
+			<if test="endTime != null"> a_endTime = #{endTime} and </if>
+            <if test="published != null"> a_published = #{published} and </if>
+ 			<if test="allowTarget != null">
+                <foreach item="item" index="index" collection="allowTarget" open="(" separator=" or " close=")">
+                  a_allowTarget LIKE concat('%', #{item}, '%')
+                </foreach>
+                and 
+            </if>
+  			<if test="isCharge != null"> a_isCharge = #{isCharge} and </if>
+   			<if test="queryParams.searchKey != null">
+				(a_title LIKE concat('%', #{queryParams.searchKey}, '%')) and
+			</if>
+        </trim>
+    </select>
+       
+    <select id="selectOne" parameterType="int" resultMap="activityResult">
+        select *
+        from xi_activity
+        where a_Id = #{id}
+    </select>
+    
+   <delete id="delete" parameterType="int">
+        delete from xi_activity where a_Id = #{id}
+    </delete>
+    
+</mapper>

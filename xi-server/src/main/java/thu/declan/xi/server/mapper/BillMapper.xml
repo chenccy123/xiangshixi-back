@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="thu.declan.xi.server.mapper.BillMapper">
+
+    <resultMap type="Bill" id="billResult">
+        <result property="id" column="b_id" />
+        <result property="comId" column="b_comId" />
+		<result property="invTitle" column="b_invTitle" />
+		<result property="comEin" column="b_comEin" />
+		<result property="comEmail" column="b_comEmail" />
+		<!-- <result property="billState" column="b_billState" /> -->
+    </resultMap>
+	
+    <sql id="insertBaseColumns" >
+        b_comId, b_invTitle, b_comEin, b_comEmail<!-- , b_billState -->
+    </sql>
+    
+    <sql id="selectBaseColumns" >
+		xi_bill.*
+    </sql>
+    
+	<sql id="selectExtColumns" >
+		xi_bill.*, xi_company.*
+    </sql>
+    
+    <sql id="joinedTable">
+		xi_bill
+		left join xi_company on xi_company.c_id = xi_bill.b_comId
+	</sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="Bill">
+        insert into xi_bill (<include refid="insertBaseColumns" />) 
+        values (#{comId}, #{invTitle}, #{comEin}, #{comEmail}<!-- , #{billState} -->)
+    </insert>
+    
+    <update id="update" parameterType="Bill">
+        update xi_bill 
+        <trim prefix="set" suffixOverrides=",">
+        	<if test="comId != null">  b_comId = #{comId}, </if>
+        	<if test="invTitle != null">  b_invTitle = #{invTitle}, </if>
+        	<if test="comEin != null">  b_comEin = #{comEin}, </if>
+			<if test="comEmail != null"> b_comEmail = #{comEmail}, </if>
+            <!-- <if test="billState != null"> b_billState = #{billState}, </if> -->
+        </trim>
+        where b_id = #{id}
+    </update>
+    
+    <select id="selectOne" parameterType="int" resultMap="billResult">
+        select <include refid="selectBaseColumns" />
+        from xi_bill
+        where b_id = #{id}
+    </select>
+	
+	<sql id="whereList" >
+		<trim prefix="where" suffixOverrides="and">
+			<if test="comId != null">  b_comId = #{comId} and </if>
+        	<if test="invTitle != null">  b_invTitle = #{invTitle} and </if>
+        	<if test="comEin != null">  b_comEin = #{comEin} and </if>
+			<if test="comEmail != null"> b_comEmail = #{comEmail} and </if>
+            <!-- <if test="billState != null"> b_billState = #{billState} and </if> -->
+        </trim>
+	</sql>
+    	
+    <select id="selectList" parameterType="Bill" resultMap="billResult">
+        select <include refid="selectExtColumns" />
+        from <include refid="joinedTable" />
+        <include refid="whereList" />
+    </select>
+    
+    <select id="selectCount" parameterType="Bill" resultType="int">
+        select count(*)
+        from <include refid="joinedTable" />
+        <include refid="whereList" />
+    </select>
+	
+    <delete id="delete" parameterType="int">
+        delete from xi_bill where b_id = #{id}
+    </delete>
+    
+</mapper>
+

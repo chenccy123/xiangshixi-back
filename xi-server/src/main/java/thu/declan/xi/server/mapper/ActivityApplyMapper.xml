@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="thu.declan.xi.server.mapper.ActivityApplyMapper">
+
+    <resultMap type="ActivityApply" id="activityApplyResult">
+        <result property="id" column="a_Id" />
+		<result property="accountId" column="a_accountId" />
+        <result property="activityId" column="a_activityId" />
+        <result property="allowType" column="a_allowType" />
+		<result property="applyTime" column="a_applyTime" />
+		<result property="applyStatus" column="a_applyStatus" />
+        <result property="payType" column="a_payType" />
+        <result property="payFee" column="a_payFee" />
+        <result property="payTime" column="a_payTime" />
+        <result property="payStatus" column="a_payStatus" />
+        <result property="checkStatus" column="a_checkStatus" />
+        <result property="checkTime" column="a_checkTime" />
+        <result property="checkUserId" column="a_checkUserId" />
+        <association property="company" javaType="Company">
+			<id property="id" column="p_companyId"/>
+			<result property="accountId" column="c_accountId" />
+			<result property="name" column="c_name" />
+			<result property="addr" column="c_addr" />
+			<result property="type" column="c_type" />
+			<result property="contact" column="c_contact" />
+			<result property="contactPos" column="c_contactPos" />
+			<result property="contactPhone" column="c_contactPhone" />
+			<result property="avatar" column="c_avatar" />
+			<result property="phone" column="c_phone" />
+			<result property="industry" column="c_industry" />
+			<result property="link" column="c_link" />
+			<result property="logo" column="c_logo" />
+			<result property="verified" column="c_verified" />
+		</association>
+		<association property="student" javaType="Student">
+			<result property="id" column="s_id" />
+			<result property="accountId" column="s_accountId" />
+			<result property="name" column="s_name" />
+			<result property="idNo" column="s_idNo" />
+			<result property="phone" column="s_phone" />
+			<result property="gender" column="s_gender" />
+			<result property="education" column="s_education" />
+			<result property="major" column="s_major" />
+			<result property="area" column="s_area" />
+			<result property="email" column="s_email" />
+			<result property="schoolType" column="s_schoolType" />
+			<result property="schoolName" column="s_schoolName" />
+			<result property="language" column="s_language" />
+			<result property="langLevel" column="s_langLevel" />
+			<result property="grade" column="s_grade" />
+			<result property="stuCard" column="s_stuCard" />
+			<result property="certs" column="s_certs" />
+			<result property="localResume" column="s_localResume"/>
+			<result property="selfEval" column="s_selfEval" />
+			<result property="socialExp" column="s_socialExp" />
+			<result property="workExp" column="s_workExp" />
+			<result property="avatar" column="s_avatar" />
+			<result property="subscription" column="s_subscription" />
+		</association>
+    </resultMap>
+   
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="ActivityApply">
+        insert into xi_activityApply (a_accountId, a_activityId, a_allowType, a_applyTime, a_applyStatus, a_payType, a_payFee, a_payTime, a_payStatus, a_checkStatus, a_checkTime, a_checkUserId) 
+        values (#{accountId}, #{activityId}, #{allowType}, NOW(), #{applyStatus}, #{payType}, #{payFee}, #{payTime}, #{payStatus}, #{checkStatus}, #{checkTime}, #{checkUserId})
+    </insert>
+    
+    <update id="update" parameterType="ActivityApply">
+        update xi_activityApply 
+        <trim prefix="set" suffixOverrides=",">
+            <if test="accountId != null"> a_accountId = #{accountId}, </if>
+            <if test="activityId != null"> a_activityId = #{activityId}, </if>
+			<if test="allowType != null"> a_allowType = #{allowType}, </if>
+			<if test="applyTime != null"> a_applyTime = #{applyTime}, </if>
+			<if test="applyStatus != null"> a_applyStatus = #{applyStatus}, </if>
+			<if test="payType != null"> a_payType = #{payType}, </if>
+			<if test="payFee != null"> a_payFee = #{payFee}, </if>
+			<if test="payTime != null"> a_payTime = #{payTime}, </if>
+			<if test="payStatus != null"> a_payStatus = #{payStatus}, </if>
+			<if test="checkStatus != null"> a_checkStatus = #{checkStatus}, </if>
+			<if test="checkTime != null"> a_checkTime = #{checkTime}, </if>
+			<if test="checkUserId != null"> a_checkUserId = #{checkUserId}, </if>
+        </trim>
+        where a_Id = #{id}
+    </update>
+    
+
+ 
+     <select id="selectListForStudent" parameterType="ActivityApply" resultMap="activityApplyResult">
+        select * from xi_activityApply inner join xi_student  on s_accountid=a_accountid 
+        <trim prefix="where" suffixOverrides="and">
+            <if test="accountId != null"> a_accountId = #{accountId} and </if>
+			<if test="activityId != null"> a_activityId = #{activityId} and </if>
+			<if test="allowType != null"> a_allowType = #{allowType} and </if>
+            <if test="applyStatus != null"> a_applyStatus = #{applyStatus} and </if>
+ 			<if test="payType != null"> a_payType = #{payType} and </if>
+  			<if test="payStatus != null"> a_payStatus = #{payStatus} and </if>
+   			<if test="checkStatus != null"> a_checkStatus = #{checkStatus} and </if>
+        </trim>
+    </select>
+
+
+    <select id="selectCountForStudent" parameterType="ActivityApply" resultType="int">
+        select count(*)
+        from xi_activityApply inner join xi_student  on s_accountid=a_accountid 
+        <trim prefix="where" suffixOverrides="and">
+            <if test="accountId != null"> a_accountId = #{accountId} and </if>
+			<if test="activityId != null"> a_activityId = #{activityId} and </if>
+			<if test="allowType != null"> a_allowType = #{allowType} and </if>
+            <if test="applyStatus != null"> a_applyStatus = #{applyStatus} and </if>
+ 			<if test="payType != null"> a_payType = #{payType} and </if>
+  			<if test="payStatus != null"> a_payStatus = #{payStatus} and </if>
+   			<if test="checkStatus != null"> a_checkStatus = #{checkStatus} and </if>
+        </trim>
+    </select>
+    
+
+     <select id="selectListForCompany" parameterType="ActivityApply" resultMap="activityApplyResult">
+        select * from xi_activityApply inner join xi_company  on c_accountid=a_accountid
+        <trim prefix="where" suffixOverrides="and">
+            <if test="accountId != null"> a_accountId = #{accountId} and </if>
+			<if test="activityId != null"> a_activityId = #{activityId} and </if>
+			<if test="allowType != null"> a_allowType = #{allowType} and </if>
+            <if test="applyStatus != null"> a_applyStatus = #{applyStatus} and </if>
+ 			<if test="payType != null"> a_payType = #{payType} and </if>
+  			<if test="payStatus != null"> a_payStatus = #{payStatus} and </if>
+   			<if test="checkStatus != null"> a_checkStatus = #{checkStatus} and </if>
+        </trim>
+    </select>
+    
+   <select id="selectCountForCompany" parameterType="ActivityApply" resultType="int">
+        select count(*)
+        from xi_activityApply inner join xi_company  on c_accountid=a_accountid
+        <trim prefix="where" suffixOverrides="and">
+            <if test="accountId != null"> a_accountId = #{accountId} and </if>
+			<if test="activityId != null"> a_activityId = #{activityId} and </if>
+			<if test="allowType != null"> a_allowType = #{allowType} and </if>
+            <if test="applyStatus != null"> a_applyStatus = #{applyStatus} and </if>
+ 			<if test="payType != null"> a_payType = #{payType} and </if>
+  			<if test="payStatus != null"> a_payStatus = #{payStatus} and </if>
+   			<if test="checkStatus != null"> a_checkStatus = #{checkStatus} and </if>
+        </trim>
+    </select>
+
+    <select id="selectList" parameterType="ActivityApply" resultMap="activityApplyResult">
+        select *
+        from xi_activityApply
+        <trim prefix="where" suffixOverrides="and">
+            <if test="accountId != null"> a_accountId = #{accountId} and </if>
+			<if test="activityId != null"> a_activityId = #{activityId} and </if>
+			<if test="allowType != null"> a_allowType = #{allowType} and </if>
+            <if test="applyStatus != null"> a_applyStatus = #{applyStatus} and </if>
+ 			<if test="payType != null"> a_payType = #{payType} and </if>
+  			<if test="payStatus != null"> a_payStatus = #{payStatus} and </if>
+   			<if test="checkStatus != null"> a_checkStatus = #{checkStatus} and </if>
+        </trim>
+    </select>
+               
+    <select id="selectCount" parameterType="ActivityApply" resultType="int">
+        select count(*)
+        from xi_activityApply
+        <trim prefix="where" suffixOverrides="and">
+            <if test="accountId != null"> a_accountId = #{accountId} and </if>
+			<if test="activityId != null"> a_activityId = #{activityId} and </if>
+			<if test="allowType != null"> a_allowType = #{allowType} and </if>
+            <if test="applyStatus != null"> a_applyStatus = #{applyStatus} and </if>
+ 			<if test="payType != null"> a_payType = #{payType} and </if>
+  			<if test="payStatus != null"> a_payStatus = #{payStatus} and </if>
+   			<if test="checkStatus != null"> a_checkStatus = #{checkStatus} and </if>
+        </trim>
+    </select>
+    
+   <select id="selectOne" parameterType="int" resultMap="activityApplyResult">
+        select *
+        from xi_activityApply
+        where a_Id = #{id}
+    </select>
+    
+   <delete id="delete" parameterType="int">
+        delete from xi_activityApply where a_Id = #{id}
+    </delete>
+    
+</mapper>

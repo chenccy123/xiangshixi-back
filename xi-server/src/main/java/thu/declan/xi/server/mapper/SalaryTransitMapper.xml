@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="thu.declan.xi.server.mapper.SalaryTransitMapper">
+
+    <resultMap type="SalaryTransit" id="salaryTransitResult">
+        <result property="id" column="i_id" />
+        <result property="auditId" column="i_auditId" />
+        <result property="comId" column="i_comId" />
+		<result property="payId" column="i_payId" />
+		<result property="stuId" column="i_stuId" />
+		<result property="phone" column="i_phone" />
+		<result property="workDays" column="i_workDays" />
+		<result property="dailyWage" column="i_dailyWage" />
+		<result property="month" column="i_month" />
+        <result property="subTotal" column="i_subTotal" />
+        <result property="state" column="i_state" />
+        <result property="prompt" column="i_prompt" />
+        <result property="importDate" column="i_importDate" />
+        <result property="submitDate" column="i_submitDate" />
+        <result property="issueDate" column="i_issueDate" />
+        <association property="company" javaType="Company">
+			<result property="id" column="c_id"/>
+			<result property="accountId" column="c_accountId" />
+			<result property="name" column="c_name" />
+			<result property="addr" column="c_addr" />
+			<result property="type" column="c_type" />
+			<result property="contact" column="c_contact" />
+			<result property="contactPos" column="c_contactPos" />
+			<result property="contactPhone" column="c_contactPhone" />
+			<result property="avatar" column="c_avatar" />
+			<result property="phone" column="c_phone" />
+			<result property="industry" column="c_industry" />
+			<result property="link" column="c_link" />
+			<result property="logo" column="c_logo" />
+			<result property="verified" column="c_verified" />
+		</association>
+		<association property="student" javaType="Student">
+			<result property="id" column="s_id" />
+			<result property="accountId" column="s_accountId" />
+			<result property="name" column="s_name" />
+			<result property="idNo" column="s_idNo" />
+			<result property="phone" column="s_phone" />
+			<result property="gender" column="s_gender" />
+			<result property="education" column="s_education" />
+			<result property="major" column="s_major" />
+			<result property="area" column="s_area" />
+			<result property="email" column="s_email" />
+			<result property="schoolType" column="s_schoolType" />
+			<result property="schoolName" column="s_schoolName" />
+			<result property="language" column="s_language" />
+			<result property="langLevel" column="s_langLevel" />
+			<result property="grade" column="s_grade" />
+			<result property="stuCard" column="s_stuCard" />
+			<result property="certs" column="s_certs" />
+			<result property="localResume" column="s_localResume"/>
+			<result property="selfEval" column="s_selfEval" />
+			<result property="socialExp" column="s_socialExp" />
+			<result property="workExp" column="s_workExp" />
+			<result property="avatar" column="s_avatar" />
+			<result property="subscription" column="s_subscription" />
+		</association>
+    </resultMap>
+	
+    <sql id="insertBaseColumns" >
+        i_auditId, i_comId, i_payId, i_stuId, i_phone, i_workDays, i_dailyWage, i_month, i_subTotal, i_state, i_prompt, i_importDate, i_submitDate, i_issueDate
+    </sql>
+    
+    <sql id="selectBaseColumns" >
+		xi_import.*
+    </sql>
+    
+	<sql id="selectExtColumns" >
+		xi_import.*, xi_student.*, xi_company.*
+    </sql>
+    
+    <sql id="joinedTable">
+		xi_import
+		left join xi_student on xi_student.s_phone = xi_import.i_phone
+		left join xi_company on xi_company.c_id = xi_import.i_comId
+	</sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="SalaryTransit">
+        insert into xi_import (<include refid="insertBaseColumns" />) 
+        values (#{auditId}, #{comId}, #{payId}, #{stuId}, #{phone}, #{workDays}, #{dailyWage}, #{month}, #{subTotal}, #{state}, #{prompt}, #{importDate}, #{submitDate}, #{issueDate})
+    </insert>
+    
+    <update id="update" parameterType="SalaryTransit">
+        update xi_import 
+        <trim prefix="set" suffixOverrides=",">
+        	<if test="auditId != null">  i_auditId = #{auditId}, </if>
+        	<if test="comId != null">  i_comId = #{comId}, </if>
+        	<if test="payId != null">  i_payId = #{payId}, </if>
+        	<if test="stuId != null">  i_stuId = #{stuId}, </if>
+        	<if test="phone != null">  i_phone = #{phone}, </if>
+			<if test="workDays != null"> i_workDays = #{workDays}, </if>
+            <if test="dailyWage != null"> i_dailyWage = #{dailyWage}, </if>
+            <if test="subTotal != null"> i_subTotal = #{subTotal}, </if>
+            <if test="month != null"> i_month = #{month}, </if>
+            <if test="state != null"> i_state = #{state}, </if>
+            <if test="prompt != null"> i_prompt = #{prompt}, </if>
+            <if test="importDate != null"> i_importDate = #{importDate}, </if>
+            <if test="submitDate != null"> i_submitDate = #{submitDate}, </if>
+            <if test="issueDate != null"> i_issueDate = #{issueDate}, </if>
+        </trim>
+        where i_id = #{id}
+    </update>
+    
+    <select id="selectOne" parameterType="int" resultMap="salaryTransitResult">
+        select <include refid="selectBaseColumns" />
+        from xi_import
+        where i_id = #{id}
+    </select>
+
+	<sql id="whereList" >
+		<trim prefix="where" suffixOverrides="and">
+			<if test="auditId != null">  i_auditId = #{auditId} and </if>
+			<if test="comId != null">  i_comId = #{comId} and </if>
+			<if test="payId != null">  i_payId = #{payId} and </if>
+			<if test="stuId != null"> i_stuId = #{stuId} and </if>
+			<if test="phone != null">  i_phone = #{phone} and </if>
+			<if test="workDays != null"> i_workDays = #{workDays} and </if>
+			<if test="dailyWage != null"> i_dailyWage = #{dailyWage} and </if>
+			<if test="subTotal != null"> i_subTotal = #{subTotal} and </if>
+			<if test="month != null">  i_month = #{month} and </if>
+			<if test="state != null">  i_state = #{state} and </if>
+			<if test="prompt != null"> i_prompt = #{prompt} and </if>
+			<if test="importDate != null"> i_importDate = #{importDate} and </if>
+			<if test="submitDate != null"> i_submitDate = #{submitDate} and </if>
+			<if test="issueDate != null"> i_issueDate = #{issueDate} and </if>
+			<if test="queryStates != null"> 
+				i_state in 
+				<foreach item="item" index="index" collection="queryStates" open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				and 
+			</if>
+        </trim>
+	</sql>
+    	
+    <select id="selectList" parameterType="Salary" resultMap="salaryTransitResult">
+        select <include refid="selectExtColumns" />
+        from <include refid="joinedTable" />
+        <include refid="whereList" />
+		order by i_state
+    </select>
+    
+    <select id="selectCount" parameterType="SalaryTransit" resultType="int">
+        select count(*)
+        from <include refid="joinedTable" />
+        <include refid="whereList" />
+    </select>
+    
+    <select id="getSum" parameterType="SalaryTransit" resultType="double">
+    	select sum(i_subTotal) 
+    	from xi_import
+    	<include refid="whereList" />
+    </select>
+	
+    <delete id="delete" parameterType="int">
+        delete from xi_import where i_id = #{id}
+    </delete>
+    <insert id="insertBatch" >
+    	insert into xi_import (<include refid="insertBaseColumns" />)
+    	values 
+    	<foreach collection="list" item="SalaryTransit" separator=",">
+    	( #{SalaryTransit.auditId},
+    	  #{SalaryTransit.comId},
+    	  #{SalaryTransit.payId},
+    	  #{SalaryTransit.stuId},
+    	  #{SalaryTransit.phone},
+    	  #{SalaryTransit.workDays},
+    	  #{SalaryTransit.dailyWage},
+    	  #{SalaryTransit.month},
+    	  #{SalaryTransit.subTotal},
+    	  #{SalaryTransit.state},
+    	  #{SalaryTransit.prompt},
+    	  #{SalaryTransit.importDate},
+    	  #{SalaryTransit.submitDate},
+    	  #{SalaryTransit.issueDate} )
+    	</foreach>
+    </insert>
+
+</mapper>
+
